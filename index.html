@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LensCare - Tracker Soczewek</title>
+    <meta name="description" content="Lokalny, bezpieczny tracker wymiany soczewek kontaktowych.">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Soczewki</h1>
+            <button id="notifyBtn" class="notify-btn" style="display: none;">
+                🔔 Włącz powiadomienia
+            </button>
+        </header>
+
+        <main>
+            <!-- Główny Dashboard Statusu -->
+            <section id="statusCard" class="card status-card hidden">
+                <div class="status-icon" id="statusIcon">👁️</div>
+                <h2 id="statusTitle">Brak aktywnych soczewek</h2>
+                <div class="days-display" id="daysDisplay">--</div>
+                <p class="status-subtitle" id="statusSubtitle">Dodaj datę wymiany poniżej</p>
+                <div class="date-info" id="dateInfo"></div>
+            </section>
+
+            <!-- Formularz -->
+            <section class="card form-card">
+                <h3>📅 Zarejestruj wymianę</h3>
+                <form id="lensForm">
+                    <div class="form-group">
+                        <label for="startDate">Data założenia:</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Czas noszenia:</label>
+                        <select id="duration" required>
+                            <option value="1">1 dzień (jednorazowe)</option>
+                            <option value="14">14 dni (dwutygodniowe)</option>
+                            <option value="30" selected>30 dni (miesięczne)</option>
+                            <option value="90">90 dni (kwartalne)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Zapisz wymianę</button>
+                </form>
+            </section>
+
+            <!-- Historia -->
+            <section class="history-section">
+                <h3>Ostatnie wymiany</h3>
+                <div id="historyList"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
