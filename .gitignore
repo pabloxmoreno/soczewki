@@ -1,0 +1,10 @@
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Ewentualne pliki środowiskowe (na przyszłość, jeśli dodasz backend)
+.env
+.env.local
+
+# Foldery z zależnościami (jeśli kiedyś dodasz Node.js)
+node_modules/
